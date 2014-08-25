@@ -3,9 +3,7 @@ Rubies
 
 Dockerfiles for different Ruby versions
 
-All the images lives in their own folder and are automatically built by Docker.
-
-The individual images inherit from the base image and should be used like:
+The individual images live in each their own branch and inherit from the base image and should be used like:
 
 ```
 FROM lokalebasen/rubies:base
