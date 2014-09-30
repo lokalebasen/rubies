@@ -14,8 +14,8 @@ RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 RUN git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 # Setup rbenv
-ENV PATH $HOME/.rbenv/bin:$PATH
-ENV PATH $HOME/.rbenv/shims:$PATH
+ENV PATH /.rbenv/bin:$PATH
+ENV PATH /.rbenv/shims:$PATH
 RUN eval "$(rbenv init -)"
 RUN rbenv rehash
 
