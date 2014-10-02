@@ -10,16 +10,16 @@ RUN apt-get update -y
 RUN apt-get install -y build-essential libpq-dev curl redis-server git cron libxml2-dev libxslt-dev libyaml-dev supervisor
 
 # Install rbenv
-RUN git clone https://github.com/sstephenson/rbenv.git /.rbenv
-RUN git clone https://github.com/sstephenson/ruby-build.git /.rbenv/plugins/ruby-build
+RUN git clone https://github.com/sstephenson/rbenv.git /root/.rbenv
+RUN git clone https://github.com/sstephenson/ruby-build.git /root/.rbenv/plugins/ruby-build
 
 # Setup rbenv
-ENV PATH /.rbenv/bin:$PATH
-ENV PATH /.rbenv/shims:$PATH
+ENV PATH /root/.rbenv/bin:$PATH
+ENV PATH /root/.rbenv/shims:$PATH
 RUN eval "$(rbenv init -)"
 RUN rbenv rehash
 
-RUN echo "---\ngem: --no-rdoc --no-ri" > ~/.gemrc
+RUN echo "---\ngem: --no-rdoc --no-ri" > /root/.gemrc
 
 # Setup ETCD
 RUN curl -L -o /bin/etcdenv "https://gist.github.com/fracklen/56cd1440ed3785aadfdf/raw/92d168d931fe5c4132e7bbbd774177cdce0d9ad9/with_etcd_environment"
