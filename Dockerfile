@@ -1,6 +1,6 @@
-FROM ubuntu:precise
+FROM ubuntu:trusty
 MAINTAINER Mads Ohm Larsen ml@lokalebasen.dk
-ENV REFRESHED_AT 2014-09-30
+ENV REFRESHED_AT 2014-10-16
 
 # Make sure we use 'universe'
 RUN sed -i.bak 's/main$/main universe/' /etc/apt/sources.list
