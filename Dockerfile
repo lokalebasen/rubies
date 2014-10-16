@@ -22,8 +22,8 @@ RUN rbenv rehash
 RUN echo "---\ngem: --no-rdoc --no-ri" > /root/.gemrc
 
 # Setup ETCD
-RUN curl -L -o /bin/etcdenv "https://gist.github.com/fracklen/56cd1440ed3785aadfdf/raw/92d168d931fe5c4132e7bbbd774177cdce0d9ad9/with_etcd_environment"
-RUN chmod +x /bin/etcdenv
+RUN curl -Lo /bin/go-env "https://github.com/lokalebasen/go-env/releases/download/0.1/go-env"
+RUN chmod +x /bin/go-env
 
 # Setup locale
 RUN locale-gen da_DK.UTF-8
