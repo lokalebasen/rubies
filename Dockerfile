@@ -7,7 +7,17 @@ RUN sed -i.bak 's/main$/main universe/' /etc/apt/sources.list
 
 # Install libs
 RUN apt-get update -y
-RUN apt-get install -y build-essential libpq-dev curl redis-server git cron libxml2-dev libxslt-dev libyaml-dev supervisor
+RUN apt-get install -y \
+  libreadline-dev \
+  build-essential \
+  libpq-dev curl \
+  redis-server \
+  git \
+  cron \
+  libxml2-dev \
+  libxslt-dev \
+  libyaml-dev \
+  supervisor\
 
 # Install rbenv
 RUN git clone https://github.com/sstephenson/rbenv.git /root/.rbenv
