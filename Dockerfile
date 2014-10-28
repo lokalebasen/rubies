@@ -17,7 +17,7 @@ RUN apt-get install -y \
   libxml2-dev \
   libxslt-dev \
   libyaml-dev \
-  supervisor\
+  supervisor
 
 # Install rbenv
 RUN git clone https://github.com/sstephenson/rbenv.git /root/.rbenv
