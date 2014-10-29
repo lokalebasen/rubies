@@ -44,3 +44,6 @@ ENV LC_CTYPE da_DK.UTF-8
 
 # Set default envs
 ENV PORT 8080
+
+# Default entry point
+ENTRYPOINT ["go-env", "-retry=5"]
