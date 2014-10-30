@@ -8,3 +8,5 @@ RUN rbenv install $RBENV_VERSION
 RUN rbenv rehash
 RUN gem install bundler
 RUN rbenv rehash
+
+ONBUILD ENTRYPOINT ["go-env", "-retry=5"]
