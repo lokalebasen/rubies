@@ -32,7 +32,7 @@ RUN rbenv rehash
 RUN echo "---\ngem: --no-rdoc --no-ri" > /root/.gemrc
 
 # Setup ETCD
-RUN curl -Lo /bin/go-env "https://github.com/lokalebasen/go-env/releases/download/0.2/go-env-0.2-linux-amd64"
+RUN curl -Lo /bin/go-env "https://github.com/lokalebasen/go-env/releases/download/0.3/go-env-0.3-linux-amd64"
 RUN chmod +x /bin/go-env
 
 # Setup locale
