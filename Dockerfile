@@ -37,8 +37,8 @@ RUN curl -Lo /bin/go-env.gz "https://github.com/lokalebasen/go-env/releases/down
     chmod +x /bin/go-env
 
 # Setup locale
-RUN locale-gen da_DK.UTF-8
-RUN update-locale
+RUN locale-gen da_DK.UTF-8 && \
+    update-locale
 ENV LANG en_US.UTF-8
 ENV LC_ALL da_DK.UTF-8
 ENV LC_CTYPE da_DK.UTF-8
