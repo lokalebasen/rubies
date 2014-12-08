@@ -32,7 +32,7 @@ RUN rbenv rehash
 RUN echo "---\ngem: --no-rdoc --no-ri" > /root/.gemrc
 
 # Setup ETCD
-RUN curl -Lo /bin/go-env.gz "https://github.com/lokalebasen/go-env/releases/download/0.3/go-env-0.3-linux-amd64.gz" && \
+RUN curl -Lo /bin/go-env.gz "https://github.com/lokalebasen/go-env/releases/download/0.4/go-env-0.4-linux-amd64.gz" && \
     gunzip /bin/go-env.gz && \
     chmod +x /bin/go-env
 
