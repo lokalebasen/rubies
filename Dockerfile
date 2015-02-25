@@ -17,7 +17,8 @@ RUN apt-get update -y    && \
             libxml2-dev     \
             libxslt-dev     \
             libyaml-dev     \
-            supervisor
+            supervisor      \
+            libffi-dev
 
 RUN git clone https://github.com/sstephenson/rbenv.git /root/.rbenv && \
     git clone https://github.com/sstephenson/ruby-build.git /root/.rbenv/plugins/ruby-build
