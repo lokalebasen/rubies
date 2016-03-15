@@ -1,6 +1,5 @@
 FROM ubuntu:trusty
-MAINTAINER Mads Ohm Larsen ml@lokalebasen.dk
-ENV REFRESHED_AT 2015-02-03
+ENV REFRESHED_AT 2016-03-15
 
 # Make sure we use 'universe'
 RUN sed -i.bak 's/main$/main universe/' /etc/apt/sources.list
@@ -31,11 +30,6 @@ RUN eval "$(rbenv init -)" && \
     rbenv rehash           && \
     echo "---\ngem: --no-rdoc --no-ri" > /root/.gemrc
 
-# Setup ETCD
-RUN curl -Lo /bin/go-env.gz "https://github.com/lokalebasen/go-env/releases/download/0.4/go-env-0.4-linux-amd64.gz" && \
-    gunzip /bin/go-env.gz && \
-    chmod +x /bin/go-env
-
 # Setup locale
 RUN locale-gen da_DK.UTF-8 && \
     update-locale
@@ -47,5 +41,9 @@ ENV LC_CTYPE da_DK.UTF-8
 # Set default envs
 ENV PORT 8080
 
+# Add JSON docker environment loader
+ADD ruby-docker-env /bin
+RUN chmod +x /bin/ruby-docker-env
+
 # Default entry point
-ENTRYPOINT ["go-env", "-retry=5"]
+ENTRYPOINT ["ruby-docker-env"]

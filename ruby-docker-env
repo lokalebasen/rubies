@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'json'
+
+env_file_path = '/docker_environment.json'
+
+if File.exist?(env_file_path)
+  docker_env_json = File.read(env_file_path)
+  docker_env = JSON.parse(docker_env_json)
+  docker_env.each { |key, value| ENV[key] = value }
+else
+  STDERR.puts "WARNING: No environment file found at #{env_file_path} - continuing in bare environment...!"
+end
+
+exec ARGV.join
