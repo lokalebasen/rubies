@@ -29,21 +29,3 @@ ENV PATH /root/.rbenv/shims:$PATH
 RUN eval "$(rbenv init -)" && \
     rbenv rehash           && \
     echo "---\ngem: --no-rdoc --no-ri" > /root/.gemrc
-
-# Setup locale
-RUN locale-gen da_DK.UTF-8 && \
-    update-locale
-
-ENV LANG en_US.UTF-8
-ENV LC_ALL da_DK.UTF-8
-ENV LC_CTYPE da_DK.UTF-8
-
-# Set default envs
-ENV PORT 8080
-
-# Add JSON docker environment loader
-ADD ruby-docker-env /bin
-RUN chmod +x /bin/ruby-docker-env
-
-# Default entry point
-ENTRYPOINT ["ruby-docker-env"]
