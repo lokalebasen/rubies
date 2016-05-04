@@ -12,7 +12,6 @@ RUN apt-get update -y    && \
             libpq-dev       \
             curl            \
             git             \
-            cron            \
             libxml2-dev     \
             libxslt-dev     \
             libyaml-dev     \
