@@ -9,8 +9,8 @@ RUN apt-get update -y    && \
     apt-get install -y      \
             libreadline-dev \
             build-essential \
-            libpq-dev curl  \
-            redis-server    \
+            libpq-dev       \
+            curl            \
             git             \
             cron            \
             libxml2-dev     \
