@@ -1,5 +1,5 @@
-FROM ubuntu:trusty
-ENV REFRESHED_AT 2016-03-15
+FROM ubuntu:xenial
+ENV REFRESHED_AT 2016-05-04
 
 # Make sure we use 'universe'
 RUN sed -i.bak 's/main$/main universe/' /etc/apt/sources.list
