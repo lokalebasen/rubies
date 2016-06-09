@@ -1,5 +1,4 @@
 FROM ubuntu:xenial
-ENV REFRESHED_AT 2016-05-04
 
 # Make sure we use 'universe'
 RUN sed -i.bak 's/main$/main universe/' /etc/apt/sources.list
@@ -16,7 +15,8 @@ RUN apt-get update -y    && \
             libxslt-dev     \
             libyaml-dev     \
             libffi-dev      \
-            python-pip
+            python-pip      \
+            nodejs
 
 RUN pip install supervisor
 
