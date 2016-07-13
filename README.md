@@ -1,16 +1,11 @@
 Rubies
 ======
 
-Dockerfiles for different Ruby versions
+Template for building new docker base images with Ruby
 
-The individual images live in each their own branch and inherit from the base image and should be used like:
+Edit `Dockerfile`, docker build and push your new versions to Docker Hub as you see fit. Naming convention is `matchoffice/rubies:2.3.1`
 
-```
-FROM matchoffice/rubies:base
-ENV RBENV_VERSION 2.1.2
+Notes:
 
-RUN rbenv install $RBENV_VERSION
-RUN rbenv rehash
-```
-
-to install Ruby `2.1.2`
+- supervisor is installed via python pip, because the one in ubuntu's repositories is outdated
+- nodejs is installed to ensure a runtime for execjs in Rails app. However, `mini_racer` seems to be the preferred way of doing it, so if all rails apps are migrated to mini_racer, you could remove nodejs from the base image.
