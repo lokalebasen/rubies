@@ -3,14 +3,14 @@ Rubies
 
 Template for building new docker base images with Ruby
 
-Edit `Dockerfile`, docker build and push your new versions to Docker Hub as you see fit. Naming convention is `matchoffice/rubies:2.3.1`
+Edit `Dockerfile`, docker build and push your new versions to Docker Hub as you see fit. Naming convention is `matchoffice/rubies:x.y.z`. e.g.:
 
-Build command:
-`docker build -t matchoffice/rubies:2.3.1 .`
-Push command
-`docker push matchoffice/rubies:2.3.1`
+```bash
+  docker build -t matchoffice/rubies:2.4.1 .
+  docker push matchoffice/rubies:2.4.1
+```
 
 Notes:
 
-- supervisor is installed via python pip, because the one in ubuntu's repositories is outdated
-- nodejs is installed to ensure a runtime for execjs in Rails app. However, `mini_racer` seems to be the preferred way of doing it, so if all rails apps are migrated to mini_racer, you could remove nodejs from the base image.
+- supervisor is installed via python pip, because the one in ubuntu's repositories is outdated.
+- nodejs is installed to ensure a runtime for execjs in Rails app.
