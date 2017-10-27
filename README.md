@@ -6,6 +6,7 @@ Template for building new docker base images with Ruby
 Edit `Dockerfile`, docker build and push your new versions to Docker Hub as you see fit. Naming convention is `matchoffice/rubies:x.y.z`. e.g.:
 
 ```bash
+  docker login # if you are not logged in already
   docker build -t matchoffice/rubies:2.4.1 .
   docker push matchoffice/rubies:2.4.1
 ```
