@@ -5,6 +5,11 @@ Template for building new docker base images with Ruby
 
 Edit `Dockerfile`, docker build and push your new versions to Docker Hub as you see fit. Naming convention is `matchoffice/rubies:2.3.1`
 
+Build command:
+`docker build -t matchoffice/rubies:2.3.1 .`
+Push command
+`docker push matchoffice/rubies:2.3.1`
+
 Notes:
 
 - supervisor is installed via python pip, because the one in ubuntu's repositories is outdated
