@@ -39,7 +39,7 @@ RUN eval "$(rbenv init -)" && \
     rbenv rehash           && \
     echo "---\ngem: --no-rdoc --no-ri" > /root/.gemrc
 
-RUN rbenv install 2.4.1
-RUN rbenv global 2.4.1
+RUN rbenv install 2.4.3
+RUN rbenv global 2.4.3
 RUN gem install bundler
 RUN rbenv rehash
